@@ -1,0 +1,27 @@
+﻿@inherits LayoutComponentBase
+@using mom_application.Shared
+   
+
+
+<div class="container mt-3">
+    @Body
+</div>
+@code {
+    public mom_application.Models.MenuItem[] MenuItems { get; set; }
+    protected override void OnInitialized()
+    {
+        this.loadMenuItems();
+    }
+    private void loadMenuItems()
+    {
+        this.MenuItems = new mom_application.Models.MenuItem[] {
+            new mom_application.Models.MenuItem() { Caption = "Heijunka Setup", Active = true, HRef="Database/Setup" },
+            new mom_application.Models.MenuItem() { Caption = "Hang Screen", Active = false, HRef="Database/SimpleDatabase"  },
+            new mom_application.Models.MenuItem() { Caption = "Takedown Screen", Active = false,HRef="Database/Takedown" },
+            new mom_application.Models.MenuItem() { Caption = "Painted Parts", Active = false, HRef="Database/PaintTracker" },
+            new mom_application.Models.MenuItem() { Caption = "Takedown Not Recorded", Active = false, HRef="Database/TakedownNotRecorded" },
+            new mom_application.Models.MenuItem() { Caption = "Takedown Live View", Active = false, HRef="Database/TakedownLive" },
+            new mom_application.Models.MenuItem() { Caption = "Heijunka Screen Hang", Active = false, HRef="Database/ScreenHang" }
+};
+    }
+}

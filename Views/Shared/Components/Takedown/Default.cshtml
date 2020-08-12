@@ -1,0 +1,66 @@
+﻿@model mom_application.ViewComponents.Takedown
+    <head>
+        <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.aspnetmvc.min.js"></script>
+        <script type="text/javascript">
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var parseString = "";
+                if (sParam != "") {
+                    parseString = window.location.search === '' ? window.location.hash.substring(2) : window.location.search.substring(1);
+                    var sPageURL = parseString, sURLVariables = sPageURL.split('&'), sParameterName, i;
+                    for (i = 0; i < sURLVariables.length; i++) {
+                        sParameterName = sURLVariables[i].split('=');
+                        if (sParameterName[0] === sParam) {
+                            return sParameterName[1] === undefined ? true : sParameterName[1];
+                        }
+                    }
+                } else {
+                    var vars = window.location.pathname.split("/");
+                    if (vars[vars.length - 1] != "") {
+                        parseString = vars[vars.length - 1].toString()
+                        return window.location;
+                    } else {
+                        return undefined;
+                    }
+                }
+            };
+            $(document).ready(function () {
+                alert(getUrlParameter(""));
+                var ls;
+                ls = localStorage;
+                alert(ls.getItem("urlLast"));
+                ls.setItem("urlLast", window.location);
+                ls.setItem("urlLast", ls.getItem("urlLast") + " , " + window.location);
+
+                alert(ls.getItem("urlLast"));
+            });
+        </script>
+    </head>
+<table id="tblTakedown" class="display nowrap" style="width:100%">
+<thead>
+    <tr style="background-color: white">
+        <th>Last Name(Hang)</th>
+        <th>Job Order</th>
+        <th>NMR</th>
+        <th>Sequence</th>
+        <th>Part</th>
+        <th class="hide-columns">Value stream</th>
+        <th> PaintColor</th>
+        <th>Qty Hung</th>
+        <th>Date/Time(Hang)</th>
+        <th>Last Name(Down)</th>
+        <th>Qty Good</th>
+        <th>Qty Rejected</th>
+        <th>Rejected Code</th>
+        <th>Rejected Text</th>
+        <th>Rejected Notes</th>
+        <th>Date / Time(TakeDown)</th>
+
+    </tr>
+
+</thead>
+<tbody>
+</tbody>
+<tfoot>
+</tfoot>
+</table>

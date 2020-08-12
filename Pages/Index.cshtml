@@ -1,0 +1,144 @@
+﻿@page "/Index"
+@model mom_application.Pages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - TelerikAspNetCoreApp</title>
+         <script src="https://kendo.cdn.telerik.com/2020.2.617/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.aspnetmvc.min.js"></script>
+          <script type="text/javascript">
+              var getUrlParameter = function getUrlParameter(sParam) {
+                  var parseString = "";
+                  if (sParam != "") {
+                      parseString = window.location.search === '' ? window.location.hash.substring(2) : window.location.search.substring(1);
+                      var sPageURL = parseString, sURLVariables = sPageURL.split('&'), sParameterName, i;
+                      for (i = 0; i < sURLVariables.length; i++) {
+                          sParameterName = sURLVariables[i].split('=');
+                          if (sParameterName[0] === sParam) {
+                              return sParameterName[1] === undefined ? true : sParameterName[1];
+                          }
+                      }
+                  } else {
+                      var vars = window.location.pathname.split("/");
+                      if (vars[vars.length - 1] != "") {
+                          parseString = vars[vars.length - 1].toString()
+                          return window.location;
+                      } else {
+                          return undefined;
+                      }
+                  }
+              };
+              $(document).ready(function () {
+                 // alert(getUrlParameter(""));
+                  getUrlParameter("");
+                  var ls;
+                  ls = localStorage; 
+                  var a = ls.getItem("urlLast");
+               //   alert(ls.getItem("urlLast"));
+                  // ls.setItem("urlLast", window.location);
+                  ls.setItem("urlLast", ls.getItem("urlLast") + " , " + window.location);
+                  var a = ls.getItem("urlLast").toString();
+                  var history = a.split(',');
+                  var fLen = history.length;
+               //   alert(ls.getItem("urlLast") + " " + fLen);
+                  var text = "<ul>";
+                  for (i = 0; i < fLen; i++) {
+                      text += "<li><a href='" + history[i] + "'>" + document.title + "</a></li>";
+                  }
+                  text += "</ul>";
+                  alert(text);
+                  document.getElementById("recentLinks").append(text);
+              });
+                    
+              
+                      
+        </script>
+        <script>
+                window.kendoTheme = "moonlight";
+                window.kendoCommonFile = "common-empty";
+        </script>
+    </head>
+    <body>
+        <div id="recentLinks"><ul><li><a href='https://localhost:44364/Database/Takedown '>Index - S and C Electric MOM</a></li><li><a href=' https://localhost:44364/Database/Takedown '>Index - S and C Electric MOM</a></li><li><a href=' https://localhost:44364/index '>Index - S and C Electric MOM</a></li><li><a href=' https://localhost:44364/index '>Index - S and C Electric MOM</a></li><li><a href=' https://localhost:44364/index'>Index - S and C Electric MOM</a></li></ul></div>
+        <div id="example">
+            <div class="demo-section k-content">
+                <h4><label for="countries">Choose shipping countries:</label></h4>
+                <input id="countries" style="width: 100%;" />
+                <div class="demo-hint">Start typing the name of an European country</div>
+            </div>
+
+
+            <script>
+                $(document).ready(function () {
+                    var data = [
+                        "Albania",
+                        "Andorra",
+                        "Armenia",
+                        "Austria",
+                        "Azerbaijan",
+                        "Belarus",
+                        "Belgium",
+                        "Bosnia & Herzegovina",
+                        "Bulgaria",
+                        "Croatia",
+                        "Cyprus",
+                        "Czech Republic",
+                        "Denmark",
+                        "Estonia",
+                        "Finland",
+                        "France",
+                        "Georgia",
+                        "Germany",
+                        "Greece",
+                        "Hungary",
+                        "Iceland",
+                        "Ireland",
+                        "Italy",
+                        "Kosovo",
+                        "Latvia",
+                        "Liechtenstein",
+                        "Lithuania",
+                        "Luxembourg",
+                        "Macedonia",
+                        "Malta",
+                        "Moldova",
+                        "Monaco",
+                        "Montenegro",
+                        "Netherlands",
+                        "Norway",
+                        "Poland",
+                        "Portugal",
+                        "Romania",
+                        "Russia",
+                        "San Marino",
+                        "Serbia",
+                        "Slovakia",
+                        "Slovenia",
+                        "Spain",
+                        "Sweden",
+                        "Switzerland",
+                        "Turkey",
+                        "Ukraine",
+                        "United Kingdom",
+                        "Vatican City"
+                    ];
+
+                    //create AutoComplete UI component
+                    $("#countries").kendoAutoComplete({
+
+                        dataSource: data,
+                        filter: "startswith",
+                        placeholder: "Select country...",
+                        separator: ", "
+                    });
+                    
+                });
+            </script>
+        </div>
+        
+
+    </body>

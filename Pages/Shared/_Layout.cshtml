@@ -1,0 +1,141 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Mvc.ViewEngines
+@using mom_application.ViewComponents
+@using mom_application.Models
+@using mom_application.ViewComponents
+
+@using mom_application.Pages
+
+@inject IWebHostEnvironment Environment
+@inject ICompositeViewEngine Engine
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - S and C Electric MOM</title>
+    <!--<link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Identity/css/site.css" />-->
+    
+    <link href="~/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="~/styles/kendo.blueopal.min.css" rel="stylesheet">
+ 
+    <script type="text/javascript">
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var parseString = "";
+            if (sParam != "") {
+                parseString = window.location.search === '' ? window.location.hash.substring(2) : window.location.search.substring(1);
+                var sPageURL = parseString, sURLVariables = sPageURL.split('&'), sParameterName, i;
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            } else {
+                var vars = window.location.pathname.split("/");
+                if (vars[vars.length - 1] != "") {
+                    parseString = vars[vars.length - 1].toString()
+                    return window.location;
+                } else {
+                    return undefined;
+                }
+            }
+        };
+       
+    </script>
+    ...
+
+
+    <script src="https://kendo.cdn.telerik.com/2020.2.617/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.aspnetmvc.min.js"></script>
+
+
+
+
+</head>
+
+
+<div style="float:left; height:100%; width:25%; align-content:center">
+
+    @{
+        var resultmenu = Engine.FindView(ViewContext, "Menu", isMainPage: false);
+    }
+    @if (resultmenu.Success)
+    {
+        await Html.RenderPartialAsync("Menu");
+    }
+    else
+    {
+        throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
+            "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
+            $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, resultmenu.SearchedLocations)}.");
+    }
+
+</div>
+<div style="float:right;clear:right">
+
+    @{
+        var result = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
+    }
+    @if (result.Success)
+    {
+        await Html.RenderPartialAsync("_LoginPartial");
+    }
+    else
+    {
+        throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
+            "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
+            $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
+    }
+</div>
+
+
+<
+<main role="main" style="width:60%;float:left;clear:left">
+    @RenderBody()
+</main>
+
+
+<footer class="footer border-top text-muted">
+    <div class="container">
+        &copy; 2020 - S and C Electric - <a asp-area="" asp-page="Privacy">Privacy</a>
+    </div>
+</footer>
+@{
+    /*var specialThemes = new string[] { "nova", "bootstrap", "fiori", "material", "materialblack", "office365" };
+    var sassThemes = new string[] { "default-v2", "bootstrap-v4", "material-v2" };
+    var commonThemeName = "common";
+    var mainHref = "https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.";
+    var isThemeSelected = Context.Request.Cookies.TryGetValue("theme", out string selectedTheme);
+
+    if (!isThemeSelected)
+    {
+        selectedTheme = "default";
+    }
+
+    var themeHref = mainHref + selectedTheme + ".min.css";
+    var commonThemeHref = mainHref + commonThemeName + ".min.css";
+    if (specialThemes.Any(x => x == selectedTheme))
+    {
+        commonThemeName += "-" + selectedTheme.Replace("materialblack", "material");
+    }
+
+    if (sassThemes.Contains(selectedTheme) && selectedTheme == "custom")
+    {
+        <link rel="stylesheet" href="~/css/styles/kendo.custom.css" />
+    }
+    else if (sassThemes.Contains(selectedTheme))
+    {
+        <link href=@themeHref rel="stylesheet" type="text/css" />
+    }
+    else
+    {
+        <link href=@commonThemeHref rel="stylesheet" type="text/css" />
+        <link href=@themeHref rel="stylesheet" type="text/css" />
+    }*/
+}
+
+@RenderSection("Scripts", required: false)
+</html>

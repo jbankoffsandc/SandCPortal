@@ -1,0 +1,292 @@
+﻿body 
+{
+	margin: 5px 0px 0px 0px;
+	font-family: Verdana;
+	font-size: 12px;
+	color: #646464;
+	background-color: #30744C;
+}
+.center
+{ 
+	text-align: center;
+}
+
+.center table
+{ 
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+input {    
+    width:180px;
+    height:25px;
+}
+
+input[type=checkbox]{
+    width:30px;
+    height:30px;
+}
+
+select {
+    width:185px;
+    height:30px;
+}
+
+a
+{
+	text-decoration: none;
+	border:none;
+	font-weight: bold;
+	color: #FFFFFF; /*white*/
+	cursor: default;
+	border: 0;/*IE Fix*/
+}
+a:hover
+{
+	text-decoration: none;
+	border:none;
+	font-weight: bold;
+	/*color: #74ab9f;*/
+	color: #99cc00;
+	cursor: pointer;
+	border: 0;/*IE Fix*/
+}
+
+.msg
+{
+	color: #840707; // dark red
+	height: 20px;
+    font-size:14px; 
+    font-weight:lighter;
+}
+
+img
+{
+    border: 0; /*IE Fix*/
+}
+
+.contents
+{
+	width:100%;
+	height:100%;
+	background-color: #FFFFFF; /* white */
+}
+
+.switchboard_btn
+{
+	width:215px;
+	height: 40px;
+	cursor: default; 
+	background-color: #ebebeb; /*light grey*/
+}
+
+.switchboard_btn:hover
+{
+	width:215px;
+	height: 40px;
+	cursor: pointer;
+	background-color: #74ab9f; /* light green */
+}
+
+.text
+{
+	font-family: Verdana;
+	font-size:12px;
+    text-align:justify;
+    line-height:20px;
+}
+
+.input_text
+{
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	border:1px solid #000000;
+	width: 200px;
+	height:23px;
+	
+	font-family:Verdana;
+	font-size:12px;
+	padding: 0px 0px 0px 0px;
+}
+.input_text:focus, input.input_text_focus
+{
+	border:1px solid #8d724c; /*brown*/
+}
+
+.c_wrapper_inset
+{
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	border:1px solid #99cc00; /*lime green*/
+	
+	-moz-box-shadow: inset 0 0 10px #008265;
+	-webkit-box-shadow: inset 0 0 10px #008265;
+	box-shadow: inset 0 0 10px #008265;
+}
+
+.header1
+{
+	color: #99cc00;
+	font-weight: bold;
+	font-size: 35px;
+}
+
+.header2
+{
+	color: #74ab9f; /* slate green*/
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.header3 {
+	color: #74ab9f; /* slate green*/
+	font-weight: bold;
+	font-size: 12px;
+}
+
+
+.view_display
+{
+	font-size: 28px;
+	font-weight:bold;
+	color: #000000;
+}
+
+.text_lbl
+{
+	color: #74ab9f;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.text_value
+{
+	color: #703232;
+	font-style: italic;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.req_field
+{
+	color: #ff0b00;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.display_sel_field
+{
+	color: #74ab9f;
+	font-weight: bold;
+	font-size: 12px;
+	width: 100px;
+	height: 50px;
+	border: solid 1px green;
+}
+
+.btn
+ {
+    background: #FFFFFF;
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #807676);
+    background-image: -moz-linear-gradient(top, #FFFFFF, #807676);
+    background-image: -o-linear-gradient(top, #FFFFFF, #807676);
+    background-image: linear-gradient(to bottom, #FFFFFF, #807676);
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    color: #000000;
+    font-family: Open Sans;
+    /*width: 250px;
+    height: 35px;*/
+    line-height: 5px;
+    font-size: 14px;
+    /*font-weight: 100;*/
+    /*padding: 22px;*/
+    box-shadow: 1px 1px 12px 0px #000000;
+    -webkit-box-shadow: 1px 1px 12px 0px #000000;
+    -moz-box-shadow: 1px 1px 12px 0px #000000;
+    border: outset #F5F5F5 7px;
+    
+    text-decoration: none;
+    /*display: inline-block;*/
+
+    cursor: pointer;
+}
+.btn:hover
+{
+    background: #FFFFFF;
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #5E5757);
+    background-image: -moz-linear-gradient(top, #FFFFFF, #5E5757);
+    background-image: -o-linear-gradient(top, #FFFFFF, #5E5757);
+    background-image: linear-gradient(to bottom, #FFFFFF, #5E5757);
+    text-decoration: none;
+}
+/*.AspNet-TreeView {
+	width: 200px;
+	border-top: solid 1px #DDD;
+}
+
+.AspNet-TreeView ul {
+	list-style: none;
+}
+
+.AspNet-TreeView-Leaf {
+	border-bottom: solid 1px #DDD;
+	background: url(../../images/structure/node-dot.gif) 8px 9px no-repeat;
+}
+
+.AspNet-TreeView-Root {
+	border-bottom: solid 1px #DDD;
+}
+
+	.AspNet-TreeView-Root a {
+		display: block;
+		width: 170px;
+		margin-left: 20px;
+		padding: 5px 5px 5px 5px;
+	}
+
+.AspNet-TreeView-Selected {
+	background: #F6F6F6 url(../../images/structure/arrow-right.gif) 8px 9px no-repeat;
+}
+
+.AspNet-TreeView-Expand {
+	display: block;
+	float: left;
+	margin: 9px 0px 0px 8px;
+	padding: 6px 4px 5px 4px;
+	height: 0px !important;
+	background: url(../../images/structure/node-plus.gif) 0px 0px no-repeat;
+	cursor: pointer;
+}
+
+.AspNet-TreeView-Collapse {
+	display: block;
+	float: left;
+	margin: 9px 0px 0px 8px;
+	padding: 6px 4px 5px 4px;
+	height: 0px !important;
+	background: url(../../images/structure/node-minus.gif) 0px 0px no-repeat;
+	cursor: pointer;
+}
+
+.AspNet-TreeView-Show li {
+	border-top: solid 1px #DDD;
+	background-position: 28px 9px;
+}
+
+.AspNet-TreeView-Hide {
+	display: none;
+}
+
+.AspNet-TreeView ul li ul li {
+	text-indent: 20px;
+	border-bottom: none;
+	font-size: 11px;
+}*/
+/**************************************/
